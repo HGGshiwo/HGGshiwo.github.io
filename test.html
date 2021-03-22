@@ -1,0 +1,33 @@
+<html>
+    <head>
+        <title>简简单单画一颗BST</title>
+        <style type="text/css">
+            .container{
+              margin:0 auto;
+              width:350px;
+            }
+            #Canvas{
+              border:1px solid black;
+            }
+        </style>
+    <script type="text/javascript" src="http://ajax.microsoft.com/ajax/jquery/jquery-1.4.min.js"></script>
+    </head>
+<body>
+    <h1 align="center">欢迎</h1>
+    <div class="container">
+        <canvas id="Canvas" width="350" height="400"></canvas>
+        <h5>请输入：</h5>
+        <input type="text" id="input" name="t" value="8[90[66][12]][5[3][6[8][9]]]" style="width: 350px;height:30px">
+    
+    <script src="build.js"></script>
+    <script>
+        function fun() {
+            var s = $("#input").val();
+            draw_tree(s);
+        }   
+    </script>
+    <input type="button" value="提交" onclick="fun()">
+</div>
+</body>
+
+</html>
