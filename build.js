@@ -10,14 +10,22 @@ function node(element,leftchild,rightchild,l_width,r_width){
     this.color="w";
 }
 
+function build_node(element,l_width,r_width){
+    var char=element[element.length-1];
+    if(char=='r'||char=='b') element=element.substring(0,element.length-1);
+    var ret=new node(element,null,null,l_width,r_width);
+    if(char =='r'||char=='b') ret.color=char;
+    return ret;
+}
 function build_tree(root_element,left_element,right_element){
-    var root=new node(root_element,null,null);
+    var root=build_node(root_element,0,0);
+    
     var ll=0,lr=0,rl=0,rr=0;//左孩子最左侧相对根的位置，左孩子的最右侧相对根的位置（防止右孩子是null）
     if(left_element==null){
         root.leftchild=null;
     }
     else if (left_element.indexOf('[')==-1){//这是一个叶子节点
-        root.leftchild=new node(left_element,null,null,-1,0);
+        root.leftchild=build_node(left_element,-1,0);
         ll=-1;lr=0;
     }
     else{
@@ -31,8 +39,7 @@ function build_tree(root_element,left_element,right_element){
         root.rightchild=null;
     }
     else if (right_element.indexOf('[')==-1){
-        right_element=right_element.substring(0,right_element.length);
-        root.rightchild=new node(right_element,null,null);
+        root.rightchild=build_node(right_element,0,1);
         rl=0;rr=1;
     }
     else{
@@ -49,7 +56,7 @@ function build_tree(root_element,left_element,right_element){
 function find_subtree(s){
     var a=new Array(3);
     var i=s.indexOf('[');//i代表左子树的前括号
-    var j=i+1;//j代表左子树的后括号
+    var j=i+1;//j代表右子树的前括号
     var flag=1;
     while(true){
         if(s[j]=='[') flag+=1;
@@ -57,9 +64,10 @@ function find_subtree(s){
         if(flag==0) break;
         j+=1;
     }
+    j+=1;
     a[0] = s.substring(0,i);
-    a[1]=(i+1 == j)? null: s.substring(i+1,j);
-    a[2]=(j+2 == s.length-1)? null: s.substring(j+2,s.length-1);
+    a[1]=(i+2 == j)? null: s.substring(i+1,j-1);
+    a[2]=(j+1 == s.length-1)? null: s.substring(j+1,s.length-1);
     console.log(a);
     return a;
 }
@@ -111,18 +119,40 @@ function find_coordinate(root){
 
 function draw_node(ctx,root){
     var radius=15;
-    var lineWidth=2;
+    ctx.lineWidth = 2;
     ctx.beginPath();
-    ctx.strokeStyle = (node.color=='r') ? "#ff0000":"#000000";
-    ctx.lineWidth = lineWidth;
-    ctx.arc(root.x, root.y, radius, 0, Math.PI*2, true);
-    ctx.stroke();
-
-    ctx.font="bold 15pt Times New Roman";
-    ctx.fillText(root.element, root.x-4*root.element.length, root.y+2.5*lineWidth);
-
+    if(root.color=='r'){
+        ctx.strokeStyle = "#ff0000";
+        ctx.fillStyle = "#ff0000";
+        ctx.arc(root.x, root.y, radius, 0, Math.PI*2, true);
+        ctx.stroke();
+        ctx.fill();
+        ctx.font="bold 15pt Times New Roman";
+        ctx.fillStyle = "#ffffff";
+        ctx.fillText(root.element, root.x-4*root.element.length, root.y+2.5*ctx.lineWidth);
+    }
+    else if(root.color=='b'){
+        ctx.strokeStyle = "#000000";
+        ctx.fillStyle = "#000000";
+        ctx.arc(root.x, root.y, radius, 0, Math.PI*2, true);
+        ctx.stroke();
+        ctx.fill();
+        ctx.font="bold 15pt Times New Roman";
+        ctx.fillStyle = "#ffffff";
+        ctx.fillText(root.element, root.x-4*root.element.length, root.y+2.5*ctx.lineWidth);
+    }
+    else{
+        ctx.strokeStyle = "#000000";
+        ctx.arc(root.x, root.y, radius, 0, Math.PI*2, true);
+        ctx.stroke();
+        ctx.font="bold 15pt Times New Roman";
+        ctx.fillStyle = "#000000";
+        ctx.fillText(root.element, root.x-4*root.element.length, root.y+2.5*ctx.lineWidth);
+    }
+    
     if(root.leftchild!=null){
         ctx.beginPath();
+        ctx.strokeStyle="#000000";
         ctx.moveTo(root.x,root.y+radius);
         ctx.lineTo(root.leftchild.x,root.leftchild.y-radius);
         ctx.stroke();
@@ -131,6 +161,7 @@ function draw_node(ctx,root){
     
     if(root.rightchild!=null){
         ctx.beginPath();
+        ctx.strokeStyle="#000000";
         ctx.moveTo(root.x,root.y+radius);
         ctx.lineTo(root.rightchild.x,root.rightchild.y-radius);
         ctx.stroke();
