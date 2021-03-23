@@ -129,7 +129,7 @@ function draw_node(ctx,root){
         ctx.fill();
         ctx.font="bold 15pt Times New Roman";
         ctx.fillStyle = "#ffffff";
-        ctx.fillText(root.element, root.x-5*root.element.length, root.y+2.5*ctx.lineWidth);
+        ctx.fillText(root.element, root.x-5*root.element.length, root.y+3*ctx.lineWidth);
     }
     else if(root.color=='b'){
         ctx.strokeStyle = "#000000";
@@ -139,7 +139,7 @@ function draw_node(ctx,root){
         ctx.fill();
         ctx.font="bold 15pt Times New Roman";
         ctx.fillStyle = "#ffffff";
-        ctx.fillText(root.element, root.x-5*root.element.length, root.y+2.5*ctx.lineWidth);
+        ctx.fillText(root.element, root.x-5*root.element.length, root.y+3*ctx.lineWidth);
     }
     else{
         ctx.strokeStyle = "#000000";
@@ -147,7 +147,7 @@ function draw_node(ctx,root){
         ctx.stroke();
         ctx.font="bold 15pt Times New Roman";
         ctx.fillStyle = "#000000";
-        ctx.fillText(root.element, root.x-5*root.element.length, root.y+2.5*ctx.lineWidth);
+        ctx.fillText(root.element, root.x-5*root.element.length, root.y+3*ctx.lineWidth);
     }
     
     if(root.leftchild!=null){
