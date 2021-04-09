@@ -55,14 +55,35 @@ class emulator{
         };
         this.pc = 0;
         this.codeSegment = code.split('\n');
+        this.lable={};
+        
+        for(var i = 0; i < this.codeSegment.length; i++){
+            var code = this.codeSegment[i].replace(/^(\s|\xA0)+|(\s|\xA0)+$/g, '');
+            var index = code.indexOf('//');
+            if(index != -1) code = code.slice(0, index);
+            code = code.replace(/,/g,'');
+            code = code.split(' ');
+            if(code.length == 1){
+                code[0] = code[0].slice(0,-1);
+                this.lable[code[0]] = i;
+            }
+            this.codeSegment[i] = code;
+        }
     }
 
     run(){
+        console.log(this.codeSegment[this.pc]);
         var code = this.codeSegment[this.pc];
-        code = code.replace(/,/g,'');
-        code = code.split(' ');
+        
+        for(var i = 1; i<=2; i++){
+            if(code[i] == "sp") code[i] = "x2";
+            if(code[i] == "a0") code[i] = "x10";
+            if(code[i] == "a1") code[i] = "x11";
+            if(code[i] == "a2") code[i] = "x12";
+        } 
+        if(code.length == 1);
 
-        if(code[0] == "add"){
+        else if(code[0] == "add"){
             this.regs[code[1]] = (this.regs[code[2]] + this.regs[code[3]]) & 0xffffffff;
         }
               
@@ -81,6 +102,38 @@ class emulator{
             
         else if(code[0] == "slli"){
            this.regs[code[1]] = (this.regs[code[2]] >> parseInt(code[3])) & 0xffffffff; 
+        }
+
+        else if(code[0] == "and"){
+            this.regs[code[1]] = (this.regs[code[2]] & this.regs[code[3]]) & 0xffffffff;
+        }
+
+        else if(code[0] == "andi"){
+            this.regs[code[1]] = (this.regs[code[2]] & parseInt(code[3])) & 0xffffffff;
+        }
+
+        else if(code[0] == "bge"){  
+            if(parseInt(this.regs[code[1]]) >= parseInt(this.regs[code[2]])){
+                console.log(this.lable);
+                console.log(this.lable[code[3]]);
+                this.pc = parseInt(this.lable[code[3]]);
+            }
+        }
+
+        else if(code[0] == "slr"){
+            this.regs[code[1]] = (this.regs[code[2]] << this.regs[parseInt(code[3])]) & 0xffffffff;
+        }
+
+        else if(code[0] == "slri"){
+            this.regs[code[1]] = (this.regs[code[2]] << parseInt(code[3])) & 0xffffffff;
+        }
+
+        else if(code[0] == "xor"){
+            this.regs[code[1]] = (this.regs[code[2]] ^ this.regs[parseInt(code[3])]) & 0xffffffff;
+        }
+        
+        else if(code[0] == "xori"){
+            this.regs[code[1]] = (this.regs[code[2]] ^ parseInt(code[3])) & 0xffffffff;
         }
             
         else if(code[0] == "sd"){
