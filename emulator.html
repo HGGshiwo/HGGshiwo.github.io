@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            RISC-V emulator
+        </title>
+    </head>
+    <body>
+        <h1>
+            欢迎
+        </h1>
+
+        <textarea 
+            id = "Code" 
+            rows="30" 
+            cols="20" 
+            style="position: absolute;left: 20px;top: 100px;">
+addi x1, x2, 1
+        </textarea> 
+
+        
+        <div style="position:absolute;top: 640px;left: 30px;">
+            <button type="button" id="run" onClick = "run()">
+                运行第0行 
+            </button>
+        </div>
+
+        <div style="position:absolute;top: 640px;left: 120px;">
+            <button type="button" id="run" onClick = "start()">
+                提交代码 
+            </button>
+        </div>
+
+        <div>
+            <table id = "regList"
+             style="position: absolute;left: 250px;top: 100px;">
+                <tr><td>x0</td> <td>0</td></tr>
+                <tr><td>x1</td> <td>0</td></tr>
+                <tr><td>x2</td> <td>0</td></tr>
+                <tr><td>x3</td> <td>0</td></tr>
+                <tr><td>x4</td> <td>0</td></tr>
+                <tr><td>x5</td> <td>0</td></tr>
+                <tr><td>x6</td> <td>0</td></tr>
+                <tr><td>x7</td> <td>0</td></tr>
+                <tr><td>x8</td> <td>0</td></tr>
+                <tr><td>x9</td> <td>0</td></tr>
+                <tr><td>x10</td> <td>0</td></tr>
+                <tr><td>x11</td> <td>0</td></tr>
+                <tr><td>x12</td> <td>0</td></tr>
+                <tr><td>x13</td> <td>0</td></tr>
+                <tr><td>x14</td> <td>0</td></tr>
+                <tr><td>x15</td> <td>0</td></tr>
+                <tr><td>x16</td> <td>0</td></tr>
+                <tr><td>x17</td> <td>0</td></tr>
+                <tr><td>x18</td> <td>0</td></tr>
+                <tr><td>x19</td> <td>0</td></tr>
+                <tr><td>x10</td> <td>0</td></tr>
+                <tr><td>x11</td> <td>0</td></tr>
+                <tr><td>x12</td> <td>0</td></tr>
+                <tr><td>x13</td> <td>0</td></tr>
+                <tr><td>x14</td> <td>0</td></tr>
+                <tr><td>x15</td> <td>0</td></tr>
+                <tr><td>x16</td> <td>0</td></tr>
+                <tr><td>x17</td> <td>0</td></tr>
+                <tr><td>x18</td> <td>0</td></tr>
+                <tr><td>x19</td> <td>0</td></tr>
+                <tr><td>x20</td> <td>0</td></tr>
+                <tr><td>x21</td> <td>0</td></tr>
+                <tr><td>x22</td> <td>0</td></tr>
+                <tr><td>x23</td> <td>0</td></tr>
+                <tr><td>x24</td> <td>0</td></tr>
+                <tr><td>x25</td> <td>0</td></tr>
+                <tr><td>x26</td> <td>0</td></tr>
+                <tr><td>x27</td> <td>0</td></tr>
+                <tr><td>x28</td> <td>0</td></tr>
+                <tr><td>x29</td> <td>0</td></tr>
+                <tr><td>x30</td> <td>0</td></tr>
+                <tr><td>x31</td> <td>0</td></tr>
+            </table>
+        </div>
+        <script src = "emulator.js"></script>
+    <script>
+        var e;
+        var regList; 
+        
+        function showRegs(e, regList){
+            for(var i = 0; i < regList.length; i++){
+                var t = regList[i].getElementsByTagName("td");
+                r =  (e.regs[t[0].innerHTML] >= 0) ? e.regs[t[0].innerHTML] : (0x10000000 + e.regs[t[0].innerHTML]);
+                t[1].innerHTML = r;
+            }
+        }
+
+        function showRun(e){
+            var b = document.getElementById("run");
+            b.innerHTML = "运行第"+ e.pc +"行";
+        }            
+
+        function start(){ 
+            var table = document.getElementById("regList");
+            regList = table.getElementsByTagName("tr");
+            var code = document.getElementById("Code").value;
+            code = code.replace(/^(\s|\xA0)+|(\s|\xA0)+$/g, ''); 
+            e = new emulator(code);
+            showRegs(e, regList);
+            showRun(e);
+        }
+        
+        function run(){            
+            e.run();            
+            if(e.pc == e.codeSegment.length) e.pc = 0;
+            showRegs(e, regList);
+            showRun(e);    
+        }
+    </script>
+    </body>
+</html>
