@@ -11,7 +11,7 @@ class emulator{
             "x28":0,"x29":0,"x30":0,"x31":0,
         };
         this.dataSegment = {};
-        this.stackSegment=new Array(512);
+        this.stackSegment = new Array(512).fill(0);
         this.pc = 0;
         this.codeSegment = code.split('\n');
         this.lable={};
@@ -19,27 +19,28 @@ class emulator{
         for(var i = 0; i < this.codeSegment.length; i++){
             var code = this.codeSegment[i].replace(/^(\s|\xA0)+|(\s|\xA0)+$/g, '');
             var index = code.indexOf('//');
+            
             if(index != -1) code = code.slice(0, index);
+            
+            code = code.replace(/sp/g, "x2");
+            code = code.replace(/a0/g, "x10");
+            code = code.replace(/a1/g, "x11");
+            code = code.replace(/a2/g, "x12");
             code = code.replace(/,/g,'');
             code = code.split(' ');
+            
             if(code.length == 1){
                 code[0] = code[0].slice(0,-1);
                 this.lable[code[0]] = i;
             }
+            
             this.codeSegment[i] = code;
         }
     }
 
     run(){
-        console.log(this.codeSegment[this.pc]);
         var code = this.codeSegment[this.pc];
         
-        for(var i = 1; i<=2; i++){
-            if(code[i] == "sp") code[i] = "x2";
-            if(code[i] == "a0") code[i] = "x10";
-            if(code[i] == "a1") code[i] = "x11";
-            if(code[i] == "a2") code[i] = "x12";
-        } 
         if(code.length == 1);
 
         else if(code[0] == "add"){
@@ -107,12 +108,11 @@ class emulator{
             
         else if(code[0] == "sd"){
             t = code[2].split('(');
-            t[1] = t[1].slice(0,-2);
-            t[0] = parseInt(t[0]);
-            var a = this.regs[t[1]] + t[0];//地址
+            t[1] = t[1].slice(0, -1);
+            var a = this.regs[t[1]] + parseInt(t[0]);//地址
             var v = this.regs[code[1]];//需要存放的值
             for(var i = 0; i < 8; i++){
-                this.stackSegment[a - i] = (v & (0xff << (28 - 4 * i))) >> (28 - 4 * i);
+                this.stackSegment[a - i] = ((v & (0xff << (28 - 4 * i))) >> (28 - 4 * i)) & 0xff;
             }    
         }
             
@@ -140,3 +140,4 @@ class emulator{
         this.pc += 1;
     }
 }
+

@@ -15,7 +15,8 @@
             rows="40" 
             cols="70" 
             style="position: absolute;left: 20px;top: 100px;font-size: medium;font-family: 'Courier New', Courier, monospace;">
-addi x1, x2, 1
+    addi x1, x2, 1
+    sd x1, 0(sp)  
         </textarea> 
 
         
@@ -290,7 +291,130 @@ addi x1, x2, 1
                 <td>0000</td> <td>0000</td> <td>0000</td> <td>0000</td> 
                 <td>0000</td> <td>0000</td> <td>0000</td> <td>0000</td>
             </tr>
+        </table>
+        <table id = "Stack2" rules="rows"
+        style="position: absolute;left: 500px;top: 900px;">
             <tr><td>| 0x108 |</td> 
+                <td>0000</td> <td>0000</td> <td>0000</td> <td>0000</td> 
+                <td>0000</td> <td>0000</td> <td>0000</td> <td>0000</td>
+            </tr>
+            <tr><td>| 0x108 |</td>
+                <td>0000</td> <td>0000</td> <td>0000</td> <td>0000</td> 
+                <td>0000</td> <td>0000</td> <td>0000</td> <td>0000</td>
+            </tr>
+            <tr><td>| 0x110 |</td> 
+                <td>0000</td> <td>0000</td> <td>0000</td> <td>0000</td> 
+                <td>0000</td> <td>0000</td> <td>0000</td> <td>0000</td>
+            </tr>
+            <tr><td>| 0x118 |</td> 
+                <td>0000</td> <td>0000</td> <td>0000</td> <td>0000</td> 
+                <td>0000</td> <td>0000</td> <td>0000</td> <td>0000</td>
+            </tr>
+            <tr><td>| 0x120 |</td> 
+                <td>0000</td> <td>0000</td> <td>0000</td> <td>0000</td> 
+                <td>0000</td> <td>0000</td> <td>0000</td> <td>0000</td>
+            </tr>
+            <tr><td>| 0x128 |</td> 
+                <td>0000</td> <td>0000</td> <td>0000</td> <td>0000</td> 
+                <td>0000</td> <td>0000</td> <td>0000</td> <td>0000</td>
+            </tr>
+            <tr><td>| 0x130 |</td> 
+                <td>0000</td> <td>0000</td> <td>0000</td> <td>0000</td> 
+                <td>0000</td> <td>0000</td> <td>0000</td> <td>0000</td>
+            </tr>
+            <tr><td>| 0x138 |</td> 
+                <td>0000</td> <td>0000</td> <td>0000</td> <td>0000</td> 
+                <td>0000</td> <td>0000</td> <td>0000</td> <td>0000</td>
+            </tr>
+            <tr><td>| 0x140 |</td> 
+                <td>0000</td> <td>0000</td> <td>0000</td> <td>0000</td> 
+                <td>0000</td> <td>0000</td> <td>0000</td> <td>0000</td>
+            </tr>
+            <tr><td>| 0x148 |</td>
+                <td>0000</td> <td>0000</td> <td>0000</td> <td>0000</td> 
+                <td>0000</td> <td>0000</td> <td>0000</td> <td>0000</td>
+            </tr>
+            <tr><td>| 0x150 |</td> 
+                <td>0000</td> <td>0000</td> <td>0000</td> <td>0000</td> 
+                <td>0000</td> <td>0000</td> <td>0000</td> <td>0000</td>
+            </tr>
+            <tr><td>| 0x158 |</td> 
+                <td>0000</td> <td>0000</td> <td>0000</td> <td>0000</td> 
+                <td>0000</td> <td>0000</td> <td>0000</td> <td>0000</td>
+            </tr>
+            <tr><td>| 0x160 |</td> 
+                <td>0000</td> <td>0000</td> <td>0000</td> <td>0000</td> 
+                <td>0000</td> <td>0000</td> <td>0000</td> <td>0000</td>
+            </tr>
+            <tr><td>| 0x168 |</td> 
+                <td>0000</td> <td>0000</td> <td>0000</td> <td>0000</td> 
+                <td>0000</td> <td>0000</td> <td>0000</td> <td>0000</td>
+            </tr>
+            <tr><td>| 0x170 |</td>
+                <td>0000</td> <td>0000</td> <td>0000</td> <td>0000</td> 
+                <td>0000</td> <td>0000</td> <td>0000</td> <td>0000</td>
+            </tr>
+            <tr><td>| 0x178 |</td> 
+                <td>0000</td> <td>0000</td> <td>0000</td> <td>0000</td> 
+                <td>0000</td> <td>0000</td> <td>0000</td> <td>0000</td>
+            </tr>
+            <tr><td>| 0x180 |</td> 
+                <td>0000</td> <td>0000</td> <td>0000</td> <td>0000</td> 
+                <td>0000</td> <td>0000</td> <td>0000</td> <td>0000</td>
+            </tr>
+            <tr><td>| 0x188 |</td> 
+                <td>0000</td> <td>0000</td> <td>0000</td> <td>0000</td> 
+                <td>0000</td> <td>0000</td> <td>0000</td> <td>0000</td>
+            </tr>
+            <tr><td>| 0x190 |</td> 
+                <td>0000</td> <td>0000</td> <td>0000</td> <td>0000</td> 
+                <td>0000</td> <td>0000</td> <td>0000</td> <td>0000</td>
+            </tr>
+            <tr><td>| 0x198 |</td> 
+                <td>0000</td> <td>0000</td> <td>0000</td> <td>0000</td> 
+                <td>0000</td> <td>0000</td> <td>0000</td> <td>0000</td>
+            </tr>
+            <tr><td>| 0x1a0 |</td> 
+                <td>0000</td> <td>0000</td> <td>0000</td> <td>0000</td> 
+                <td>0000</td> <td>0000</td> <td>0000</td> <td>0000</td>
+            </tr>
+            <tr><td>| 0x1a8 |</td> 
+                <td>0000</td> <td>0000</td> <td>0000</td> <td>0000</td> 
+                <td>0000</td> <td>0000</td> <td>0000</td> <td>0000</td>
+            </tr>
+            <tr><td>| 0x1b0 |</td> 
+                <td>0000</td> <td>0000</td> <td>0000</td> <td>0000</td> 
+                <td>0000</td> <td>0000</td> <td>0000</td> <td>0000</td>
+            </tr>
+            <tr><td>| 0x1b8 |</td>
+                <td>0000</td> <td>0000</td> <td>0000</td> <td>0000</td> 
+                <td>0000</td> <td>0000</td> <td>0000</td> <td>0000</td>
+            </tr>
+            <tr><td>| 0x1c0 |</td> 
+                <td>0000</td> <td>0000</td> <td>0000</td> <td>0000</td> 
+                <td>0000</td> <td>0000</td> <td>0000</td> <td>0000</td>
+            </tr>
+            <tr><td>| 0x1c8 |</td>
+                <td>0000</td> <td>0000</td> <td>0000</td> <td>0000</td> 
+                <td>0000</td> <td>0000</td> <td>0000</td> <td>0000</td>
+            </tr>
+            <tr><td>| 0x1d0 |</td> 
+                <td>0000</td> <td>0000</td> <td>0000</td> <td>0000</td> 
+                <td>0000</td> <td>0000</td> <td>0000</td> <td>0000</td>
+            </tr>
+            <tr><td>| 0x1d8  |</td> 
+                <td>0000</td> <td>0000</td> <td>0000</td> <td>0000</td> 
+                <td>0000</td> <td>0000</td> <td>0000</td> <td>0000</td>
+            </tr>
+            <tr><td>| 0x1f0  |</td> 
+                <td>0000</td> <td>0000</td> <td>0000</td> <td>0000</td> 
+                <td>0000</td> <td>0000</td> <td>0000</td> <td>0000</td>
+            </tr>
+            <tr><td>| 0x1f8  |</td> 
+                <td>0000</td> <td>0000</td> <td>0000</td> <td>0000</td> 
+                <td>0000</td> <td>0000</td> <td>0000</td> <td>0000</td>
+            </tr>
+            <tr><td>| 0x200 |</td> 
                 <td>0000</td> <td>0000</td> <td>0000</td> <td>0000</td> 
                 <td>0000</td> <td>0000</td> <td>0000</td> <td>0000</td>
             </tr>
@@ -300,18 +424,16 @@ addi x1, x2, 1
         <script src="auto-line-number.js"></script>
 
     <script>
-        var e;
+        var e = new emulator("addi x1, x2, 1");
         var regList;
         var stack;
-        
+
         function showRegs(e){
             for(var i = 0; i < regList.length; i++){
                 var t = regList[i].getElementsByTagName("td");
                 reg = t[0].innerHTML.replace(/\|/g,'');
                 reg = reg.replace(/\s/g,'');
-                console.log(reg);
                 var r =  (e.regs[reg] >= 0) ? e.regs[reg] : (0x10000000 + e.regs[reg]);
-                console.log(r);
                 for(var j = 8; j > 0; j--){
                     var w = 0xff << (32 - 4 * j);
                     var v = (r & w) >> (32 - 4 * j);
@@ -321,12 +443,13 @@ addi x1, x2, 1
         }
         
         function showStack(e){
+            
             for(var i = 0; i < stack.length; i++){
                 var t = stack[i].getElementsByTagName("td");
                 var s = t[0].innerHTML.replace(/\|/g,'');
                 s = s.replace(/\s/g,'');
                 for(var j = 0; j < 8; j++){
-                    t[j].innerHTML = ('0000' + e.stackSegment[i + j].toString(2)).slice(-4);
+                    t[j + 1].innerHTML = ('0000' + e.stackSegment[i * 8 + j].toString(2)).slice(-4);
                 }
             }
         }
@@ -341,20 +464,26 @@ addi x1, x2, 1
             regList = table.getElementsByTagName("tr");
             table = document.getElementById("Stack");
             stack = table.getElementsByTagName("tr"); 
+            table = document.getElementById("Stack2");
+            var t = Array.from(table.getElementsByTagName("tr"));
+            stack = Array.from(stack).concat(t);
             var code = document.getElementById("Code").value;
             code = code.replace(/^(\s|\xA0)+|(\s|\xA0)+$/g, ''); 
-            e = new emulator(code);
+            e = new emulator(code);            
             showRegs(e);
             showRun(e);
+            showStack(e);
         }
         
         function run(){            
-            e.run();            
+            e.run();          
             if(e.pc == e.codeSegment.length) e.pc = 0;
+            
             showRegs(e);
-            showRun(e);    
+            showRun(e);
+            showStack(e);    
         }
+        $("#Code").setTextareaCount({ width: "30px", bgColor: "#ddd", color: "#333", display: "inline-block" });
     </script>
-    <script> $("#Code").setTextareaCount({ width: "30px", bgColor: "#ddd", color: "#333", display: "inline-block" }); </script>
     </body>
 </html>
