@@ -1,58 +1,17 @@
 class emulator{
     constructor(code) {
         this.regs = {
-            "x0":0b00000000000000000000000000000,
-            "x1":0b00000000000000000000000000000,
-            "x2":0b00000000000000000000000000000,
-            "x3":0b00000000000000000000000000000,
-            "x4":0b00000000000000000000000000000,
-            "x5":0b00000000000000000000000000000,
-            "x6":0b00000000000000000000000000000,
-            "x7":0b00000000000000000000000000000,
-            "x8":0b00000000000000000000000000000,
-            "x9":0b00000000000000000000000000000,
-            "x10":0b00000000000000000000000000000,
-            "x11":0b00000000000000000000000000000,
-            "x12":0b00000000000000000000000000000,
-            "x13":0b00000000000000000000000000000,
-            "x14":0b00000000000000000000000000000,
-            "x15":0b00000000000000000000000000000,
-            "x16":0b00000000000000000000000000000,
-            "x17":0b00000000000000000000000000000,
-            "x18":0b00000000000000000000000000000,
-            "x19":0b00000000000000000000000000000,
-            "x20":0b00000000000000000000000000000,
-            "x21":0b00000000000000000000000000000,
-            "x22":0b00000000000000000000000000000,
-            "x23":0b00000000000000000000000000000,
-            "x24":0b00000000000000000000000000000,
-            "x25":0b00000000000000000000000000000,
-            "x26":0b00000000000000000000000000000,
-            "x27":0b00000000000000000000000000000,
-            "x28":0b00000000000000000000000000000,
-            "x29":0b00000000000000000000000000000,
-            "x30":0b00000000000000000000000000000,
-            "x31":0b00000000000000000000000000000,
+             "x0":0, "x1":0, "x2":0x108, "x3":0,
+             "x4":0, "x5":0, "x6":0, "x7":0,
+             "x8":0, "x9":0,"x10":0,"x11":0,
+            "x12":0,"x13":0,"x14":0,"x15":0,
+            "x16":0,"x17":0,"x18":0,"x19":0,
+            "x20":0,"x21":0,"x22":0,"x23":0,
+            "x24":0,"x25":0,"x26":0,"x27":0,
+            "x28":0,"x29":0,"x30":0,"x31":0,
         };
-        this.dataSegment = {
-            "x1":Array(64),
-            "x2":Array(64),
-            "x3":Array(64),
-            "x4":Array(64),
-            "x5":Array(64),
-            "x6":Array(64),
-            "x7":Array(64),
-            "x8":Array(64),
-            "x9":Array(64),
-            "x10":Array(64),
-            "x11":Array(64),
-            "x12":Array(64),
-            "x13":Array(64),
-            "x14":Array(64),
-            "x15":Array(64),
-            "x16":Array(64),
-            "x17":Array(64)
-        };
+        this.dataSegment = {};
+        this.stackSegment=new Array(512);
         this.pc = 0;
         this.codeSegment = code.split('\n');
         this.lable={};
@@ -114,8 +73,18 @@ class emulator{
 
         else if(code[0] == "bge"){  
             if(parseInt(this.regs[code[1]]) >= parseInt(this.regs[code[2]])){
-                console.log(this.lable);
-                console.log(this.lable[code[3]]);
+                this.pc = parseInt(this.lable[code[3]]);
+            }
+        }
+
+        else if(code[0] == "beq"){  
+            if(parseInt(this.regs[code[1]]) == parseInt(this.regs[code[2]])){
+                this.pc = parseInt(this.lable[code[3]]);
+            }
+        }
+
+        else if(code[0] == "bne"){  
+            if(parseInt(this.regs[code[1]]) != parseInt(this.regs[code[2]])){
                 this.pc = parseInt(this.lable[code[3]]);
             }
         }
@@ -138,14 +107,24 @@ class emulator{
             
         else if(code[0] == "sd"){
             t = code[2].split('(');
-            ea = parseInt(t[0]) >> 3;
-            this.dataSegment[t[1].slice(0,- 2)][ea] = this.regs[code[1]];
+            t[1] = t[1].slice(0,-2);
+            t[0] = parseInt(t[0]);
+            var a = this.regs[t[1]] + t[0];//地址
+            var v = this.regs[code[1]];//需要存放的值
+            for(var i = 0; i < 8; i++){
+                this.stackSegment[a - i] = (v & (0xff << (28 - 4 * i))) >> (28 - 4 * i);
+            }    
         }
             
         else if(code[0] == "ld"){
             t = code[2].split('(');
-            ea = parseInt(t[0]) >> 3;
-            this.regs[code[1]] = this.dataSegment[t[1].slice(0 ,- 1)][ea]; 
+            t[1] = t[1].slice(0,-2);
+            t[0] = parseInt(t[0]);
+            var a = this.regs[t[1]] + t[0];//地址
+            this.regs[code[1]] = 0;
+            for(var i = 0; i < 8; i++){
+                this.regs[code[1]]  += this.stackSegment[a - i] << (28 - 4 * i);
+            }     
         }
                
         else if(code[0] == "jal"){

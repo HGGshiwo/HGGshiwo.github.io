@@ -12,391 +12,349 @@
 
         <textarea 
             id = "Code" 
-            rows="30" 
-            cols="60" 
-            style="position: absolute;left: 20px;top: 100px;">
+            rows="40" 
+            cols="70" 
+            style="position: absolute;left: 20px;top: 100px;font-size: medium;font-family: 'Courier New', Courier, monospace;">
 addi x1, x2, 1
         </textarea> 
 
         
-        <div style="position:absolute;top: 640px;left: 30px;">
+        <div style="position:absolute;top: 40px;left: 200px;">
             <button type="button" id="run" onClick = "run()">
-                运行第0行 
+                运行第1行 
             </button>
         </div>
 
-        <div style="position:absolute;top: 640px;left: 120px;">
+        <div style="position:absolute;top: 40px;left: 120px;">
             <button type="button" id="run" onClick = "start()">
-                提交代码 
+                刷新代码 
             </button>
         </div>
 
         <div>
             <table id = "regList" rules="rows"
-             style="position: absolute;left: 500px;top: 100px;">
+             style="position: absolute;left: 750px;top: 100px;">
                 <tr><td>| x0 |</td> 
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td> 
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td> 
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td> 
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td> 
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td> 
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td>
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td>
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td>
+                    <td>0000</td> <td>0000</td> <td>0000</td> <td>0000</td> 
+                    <td>0000</td> <td>0000</td> <td>0000</td> <td>0000</td> 
                 </tr>
                 <tr><td>| x1 |</td>
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td> 
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td> 
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td> 
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td> 
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td> 
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td>
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td>
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td>
+                    <td>0000</td> <td>0000</td> <td>0000</td> <td>0000</td> 
+                    <td>0000</td> <td>0000</td> <td>0000</td> <td>0000</td>
                 </tr>
                 <tr><td>| x2 |</td> 
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td> 
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td> 
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td> 
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td> 
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td> 
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td>
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td>
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td>
+                    <td>0000</td> <td>0000</td> <td>0000</td> <td>0000</td> 
+                    <td>0000</td> <td>0000</td> <td>0000</td> <td>0000</td>
                 </tr>
                 <tr><td>| x3 |</td> 
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td> 
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td> 
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td> 
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td> 
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td> 
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td>
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td>
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td>
+                    <td>0000</td> <td>0000</td> <td>0000</td> <td>0000</td> 
+                    <td>0000</td> <td>0000</td> <td>0000</td> <td>0000</td>
                 </tr>
                 <tr><td>| x4 |</td> 
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td> 
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td> 
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td> 
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td> 
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td> 
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td>
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td>
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td>
+                    <td>0000</td> <td>0000</td> <td>0000</td> <td>0000</td> 
+                    <td>0000</td> <td>0000</td> <td>0000</td> <td>0000</td>
                 </tr>
                 <tr><td>| x5 |</td> 
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td> 
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td> 
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td> 
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td> 
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td> 
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td>
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td>
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td>
+                    <td>0000</td> <td>0000</td> <td>0000</td> <td>0000</td> 
+                    <td>0000</td> <td>0000</td> <td>0000</td> <td>0000</td>
                 </tr>
                 <tr><td>| x6 |</td> 
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td> 
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td> 
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td> 
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td> 
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td> 
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td>
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td>
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td>
+                    <td>0000</td> <td>0000</td> <td>0000</td> <td>0000</td> 
+                    <td>0000</td> <td>0000</td> <td>0000</td> <td>0000</td>
                 </tr>
                 <tr><td>| x7 |</td> 
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td> 
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td> 
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td> 
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td> 
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td> 
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td>
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td>
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td>
+                    <td>0000</td> <td>0000</td> <td>0000</td> <td>0000</td> 
+                    <td>0000</td> <td>0000</td> <td>0000</td> <td>0000</td>
                 </tr>
                 <tr><td>| x8 |</td> 
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td> 
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td> 
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td> 
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td> 
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td> 
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td>
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td>
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td>
+                    <td>0000</td> <td>0000</td> <td>0000</td> <td>0000</td> 
+                    <td>0000</td> <td>0000</td> <td>0000</td> <td>0000</td>
                 </tr>
                 <tr><td>| x9 |</td>
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td> 
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td> 
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td> 
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td> 
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td> 
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td>
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td>
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td>
+                    <td>0000</td> <td>0000</td> <td>0000</td> <td>0000</td> 
+                    <td>0000</td> <td>0000</td> <td>0000</td> <td>0000</td>
                 </tr>
                 <tr><td>|x10 |</td> 
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td> 
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td> 
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td> 
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td> 
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td> 
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td>
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td>
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td>
+                    <td>0000</td> <td>0000</td> <td>0000</td> <td>0000</td> 
+                    <td>0000</td> <td>0000</td> <td>0000</td> <td>0000</td>
                 </tr>
                 <tr><td>|x11 |</td> 
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td> 
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td> 
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td> 
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td> 
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td> 
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td>
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td>
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td>
+                    <td>0000</td> <td>0000</td> <td>0000</td> <td>0000</td> 
+                    <td>0000</td> <td>0000</td> <td>0000</td> <td>0000</td>
                 </tr>
                 <tr><td>|x12 |</td> 
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td> 
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td> 
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td> 
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td> 
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td> 
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td>
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td>
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td>
+                    <td>0000</td> <td>0000</td> <td>0000</td> <td>0000</td> 
+                    <td>0000</td> <td>0000</td> <td>0000</td> <td>0000</td>
                 </tr>
                 <tr><td>|x13 |</td> 
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td> 
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td> 
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td> 
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td> 
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td> 
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td>
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td>
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td>
+                    <td>0000</td> <td>0000</td> <td>0000</td> <td>0000</td> 
+                    <td>0000</td> <td>0000</td> <td>0000</td> <td>0000</td>
                 </tr>
                 <tr><td>|x14 |</td>
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td> 
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td> 
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td> 
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td> 
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td> 
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td>
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td>
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td>
+                    <td>0000</td> <td>0000</td> <td>0000</td> <td>0000</td> 
+                    <td>0000</td> <td>0000</td> <td>0000</td> <td>0000</td>
                 </tr>
                 <tr><td>|x15 |</td> 
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td> 
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td> 
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td> 
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td> 
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td> 
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td>
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td>
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td>
+                    <td>0000</td> <td>0000</td> <td>0000</td> <td>0000</td> 
+                    <td>0000</td> <td>0000</td> <td>0000</td> <td>0000</td>
                 </tr>
                 <tr><td>|x16 |</td> 
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td> 
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td> 
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td> 
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td> 
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td> 
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td>
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td>
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td>
+                    <td>0000</td> <td>0000</td> <td>0000</td> <td>0000</td> 
+                    <td>0000</td> <td>0000</td> <td>0000</td> <td>0000</td>
                 </tr>
                 <tr><td>|x17 |</td> 
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td> 
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td> 
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td> 
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td> 
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td> 
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td>
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td>
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td>
+                    <td>0000</td> <td>0000</td> <td>0000</td> <td>0000</td> 
+                    <td>0000</td> <td>0000</td> <td>0000</td> <td>0000</td>
                 </tr>
                 <tr><td>|x18 |</td> 
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td> 
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td> 
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td> 
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td> 
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td> 
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td>
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td>
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td>
+                    <td>0000</td> <td>0000</td> <td>0000</td> <td>0000</td> 
+                    <td>0000</td> <td>0000</td> <td>0000</td> <td>0000</td>
                 </tr>
                 <tr><td>|x19 |</td> 
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td> 
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td> 
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td> 
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td> 
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td> 
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td>
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td>
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td>
+                    <td>0000</td> <td>0000</td> <td>0000</td> <td>0000</td> 
+                    <td>0000</td> <td>0000</td> <td>0000</td> <td>0000</td>
                 </tr>
                 <tr><td>|x20 |</td> 
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td> 
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td> 
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td> 
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td> 
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td> 
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td>
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td>
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td>
+                    <td>0000</td> <td>0000</td> <td>0000</td> <td>0000</td> 
+                    <td>0000</td> <td>0000</td> <td>0000</td> <td>0000</td>
                 </tr>
                 <tr><td>|x21 |</td> 
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td> 
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td> 
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td> 
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td> 
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td> 
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td>
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td>
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td>
+                    <td>0000</td> <td>0000</td> <td>0000</td> <td>0000</td> 
+                    <td>0000</td> <td>0000</td> <td>0000</td> <td>0000</td>
                 </tr>
                 <tr><td>|x22 |</td> 
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td> 
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td> 
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td> 
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td> 
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td> 
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td>
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td>
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td>
+                    <td>0000</td> <td>0000</td> <td>0000</td> <td>0000</td> 
+                    <td>0000</td> <td>0000</td> <td>0000</td> <td>0000</td>
                 </tr>
                 <tr><td>|x23 |</td>
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td> 
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td> 
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td> 
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td> 
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td> 
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td>
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td>
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td>
+                    <td>0000</td> <td>0000</td> <td>0000</td> <td>0000</td> 
+                    <td>0000</td> <td>0000</td> <td>0000</td> <td>0000</td>
                 </tr>
                 <tr><td>|x24 |</td> 
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td> 
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td> 
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td> 
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td> 
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td> 
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td>
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td>
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td>
+                    <td>0000</td> <td>0000</td> <td>0000</td> <td>0000</td> 
+                    <td>0000</td> <td>0000</td> <td>0000</td> <td>0000</td>
                 </tr>
                 <tr><td>|x25 |</td>
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td> 
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td> 
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td> 
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td> 
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td> 
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td>
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td>
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td>
+                    <td>0000</td> <td>0000</td> <td>0000</td> <td>0000</td> 
+                    <td>0000</td> <td>0000</td> <td>0000</td> <td>0000</td>
                 </tr>
                 <tr><td>|x26 |</td> 
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td> 
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td> 
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td> 
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td> 
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td> 
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td>
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td>
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td>
+                    <td>0000</td> <td>0000</td> <td>0000</td> <td>0000</td> 
+                    <td>0000</td> <td>0000</td> <td>0000</td> <td>0000</td>
                 </tr>
                 <tr><td>|x27 |</td> 
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td> 
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td> 
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td> 
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td> 
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td> 
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td>
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td>
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td>
+                    <td>0000</td> <td>0000</td> <td>0000</td> <td>0000</td> 
+                    <td>0000</td> <td>0000</td> <td>0000</td> <td>0000</td>
                 </tr>
                 <tr><td>|x28 |</td> 
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td> 
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td> 
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td> 
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td> 
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td> 
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td>
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td>
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td>
+                    <td>0000</td> <td>0000</td> <td>0000</td> <td>0000</td> 
+                    <td>0000</td> <td>0000</td> <td>0000</td> <td>0000</td>
                 </tr>
                 <tr><td>|x29 |</td> 
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td> 
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td> 
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td> 
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td> 
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td> 
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td>
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td>
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td>
+                    <td>0000</td> <td>0000</td> <td>0000</td> <td>0000</td> 
+                    <td>0000</td> <td>0000</td> <td>0000</td> <td>0000</td>
                 </tr>
                 <tr><td>|x30 |</td> 
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td> 
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td> 
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td> 
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td> 
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td> 
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td>
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td>
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td>
+                    <td>0000</td> <td>0000</td> <td>0000</td> <td>0000</td> 
+                    <td>0000</td> <td>0000</td> <td>0000</td> <td>0000</td>
                 </tr>
                 <tr><td>|x31 |</td> 
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td> 
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td> 
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td> 
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td> 
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td> 
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td>
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td>
-                    <td>0</td> <td>0</td> <td>0</td> <td>0</td>
+                    <td>0000</td> <td>0000</td> <td>0000</td> <td>0000</td> 
+                    <td>0000</td> <td>0000</td> <td>0000</td> <td>0000</td>
                 </tr>
             </table>
         </div>
+        <table id = "Stack" rules="rows"
+        style="position: absolute;left: 20px;top: 900px;">
+            <tr><td>| 0x000 |</td> 
+                <td>0000</td> <td>0000</td> <td>0000</td> <td>0000</td> 
+                <td>0000</td> <td>0000</td> <td>0000</td> <td>0000</td> 
+            </tr>
+            <tr><td>| 0x008 |</td>
+                <td>0000</td> <td>0000</td> <td>0000</td> <td>0000</td> 
+                <td>0000</td> <td>0000</td> <td>0000</td> <td>0000</td>
+            </tr>
+            <tr><td>| 0x010 |</td> 
+                <td>0000</td> <td>0000</td> <td>0000</td> <td>0000</td> 
+                <td>0000</td> <td>0000</td> <td>0000</td> <td>0000</td>
+            </tr>
+            <tr><td>| 0x018 |</td> 
+                <td>0000</td> <td>0000</td> <td>0000</td> <td>0000</td> 
+                <td>0000</td> <td>0000</td> <td>0000</td> <td>0000</td>
+            </tr>
+            <tr><td>| 0x020 |</td> 
+                <td>0000</td> <td>0000</td> <td>0000</td> <td>0000</td> 
+                <td>0000</td> <td>0000</td> <td>0000</td> <td>0000</td>
+            </tr>
+            <tr><td>| 0x028 |</td> 
+                <td>0000</td> <td>0000</td> <td>0000</td> <td>0000</td> 
+                <td>0000</td> <td>0000</td> <td>0000</td> <td>0000</td>
+            </tr>
+            <tr><td>| 0x030 |</td> 
+                <td>0000</td> <td>0000</td> <td>0000</td> <td>0000</td> 
+                <td>0000</td> <td>0000</td> <td>0000</td> <td>0000</td>
+            </tr>
+            <tr><td>| 0x038 |</td> 
+                <td>0000</td> <td>0000</td> <td>0000</td> <td>0000</td> 
+                <td>0000</td> <td>0000</td> <td>0000</td> <td>0000</td>
+            </tr>
+            <tr><td>| 0x040 |</td> 
+                <td>0000</td> <td>0000</td> <td>0000</td> <td>0000</td> 
+                <td>0000</td> <td>0000</td> <td>0000</td> <td>0000</td>
+            </tr>
+            <tr><td>| 0x048 |</td>
+                <td>0000</td> <td>0000</td> <td>0000</td> <td>0000</td> 
+                <td>0000</td> <td>0000</td> <td>0000</td> <td>0000</td>
+            </tr>
+            <tr><td>| 0x050 |</td> 
+                <td>0000</td> <td>0000</td> <td>0000</td> <td>0000</td> 
+                <td>0000</td> <td>0000</td> <td>0000</td> <td>0000</td>
+            </tr>
+            <tr><td>| 0x058 |</td> 
+                <td>0000</td> <td>0000</td> <td>0000</td> <td>0000</td> 
+                <td>0000</td> <td>0000</td> <td>0000</td> <td>0000</td>
+            </tr>
+            <tr><td>| 0x060 |</td> 
+                <td>0000</td> <td>0000</td> <td>0000</td> <td>0000</td> 
+                <td>0000</td> <td>0000</td> <td>0000</td> <td>0000</td>
+            </tr>
+            <tr><td>| 0x068 |</td> 
+                <td>0000</td> <td>0000</td> <td>0000</td> <td>0000</td> 
+                <td>0000</td> <td>0000</td> <td>0000</td> <td>0000</td>
+            </tr>
+            <tr><td>| 0x070 |</td>
+                <td>0000</td> <td>0000</td> <td>0000</td> <td>0000</td> 
+                <td>0000</td> <td>0000</td> <td>0000</td> <td>0000</td>
+            </tr>
+            <tr><td>| 0x078 |</td> 
+                <td>0000</td> <td>0000</td> <td>0000</td> <td>0000</td> 
+                <td>0000</td> <td>0000</td> <td>0000</td> <td>0000</td>
+            </tr>
+            <tr><td>| 0x080 |</td> 
+                <td>0000</td> <td>0000</td> <td>0000</td> <td>0000</td> 
+                <td>0000</td> <td>0000</td> <td>0000</td> <td>0000</td>
+            </tr>
+            <tr><td>| 0x088 |</td> 
+                <td>0000</td> <td>0000</td> <td>0000</td> <td>0000</td> 
+                <td>0000</td> <td>0000</td> <td>0000</td> <td>0000</td>
+            </tr>
+            <tr><td>| 0x090 |</td> 
+                <td>0000</td> <td>0000</td> <td>0000</td> <td>0000</td> 
+                <td>0000</td> <td>0000</td> <td>0000</td> <td>0000</td>
+            </tr>
+            <tr><td>| 0x098 |</td> 
+                <td>0000</td> <td>0000</td> <td>0000</td> <td>0000</td> 
+                <td>0000</td> <td>0000</td> <td>0000</td> <td>0000</td>
+            </tr>
+            <tr><td>| 0x0a0 |</td> 
+                <td>0000</td> <td>0000</td> <td>0000</td> <td>0000</td> 
+                <td>0000</td> <td>0000</td> <td>0000</td> <td>0000</td>
+            </tr>
+            <tr><td>| 0x0a8 |</td> 
+                <td>0000</td> <td>0000</td> <td>0000</td> <td>0000</td> 
+                <td>0000</td> <td>0000</td> <td>0000</td> <td>0000</td>
+            </tr>
+            <tr><td>| 0x0b0 |</td> 
+                <td>0000</td> <td>0000</td> <td>0000</td> <td>0000</td> 
+                <td>0000</td> <td>0000</td> <td>0000</td> <td>0000</td>
+            </tr>
+            <tr><td>| 0x0b8 |</td>
+                <td>0000</td> <td>0000</td> <td>0000</td> <td>0000</td> 
+                <td>0000</td> <td>0000</td> <td>0000</td> <td>0000</td>
+            </tr>
+            <tr><td>| 0x0c0 |</td> 
+                <td>0000</td> <td>0000</td> <td>0000</td> <td>0000</td> 
+                <td>0000</td> <td>0000</td> <td>0000</td> <td>0000</td>
+            </tr>
+            <tr><td>| 0x0c8 |</td>
+                <td>0000</td> <td>0000</td> <td>0000</td> <td>0000</td> 
+                <td>0000</td> <td>0000</td> <td>0000</td> <td>0000</td>
+            </tr>
+            <tr><td>| 0x0d0 |</td> 
+                <td>0000</td> <td>0000</td> <td>0000</td> <td>0000</td> 
+                <td>0000</td> <td>0000</td> <td>0000</td> <td>0000</td>
+            </tr>
+            <tr><td>| 0x0d8  |</td> 
+                <td>0000</td> <td>0000</td> <td>0000</td> <td>0000</td> 
+                <td>0000</td> <td>0000</td> <td>0000</td> <td>0000</td>
+            </tr>
+            <tr><td>| 0x0f0  |</td> 
+                <td>0000</td> <td>0000</td> <td>0000</td> <td>0000</td> 
+                <td>0000</td> <td>0000</td> <td>0000</td> <td>0000</td>
+            </tr>
+            <tr><td>| 0x0f8  |</td> 
+                <td>0000</td> <td>0000</td> <td>0000</td> <td>0000</td> 
+                <td>0000</td> <td>0000</td> <td>0000</td> <td>0000</td>
+            </tr>
+            <tr><td>| 0x100 |</td> 
+                <td>0000</td> <td>0000</td> <td>0000</td> <td>0000</td> 
+                <td>0000</td> <td>0000</td> <td>0000</td> <td>0000</td>
+            </tr>
+            <tr><td>| 0x108 |</td> 
+                <td>0000</td> <td>0000</td> <td>0000</td> <td>0000</td> 
+                <td>0000</td> <td>0000</td> <td>0000</td> <td>0000</td>
+            </tr>
+        </table>
         <script src = "emulator.js"></script>
+        <script src="jquery-1.12.0.min.js"></script>
+        <script src="auto-line-number.js"></script>
+
     <script>
         var e;
-        var regList; 
+        var regList;
+        var stack;
         
-        function showRegs(e, regList){
+        function showRegs(e){
             for(var i = 0; i < regList.length; i++){
                 var t = regList[i].getElementsByTagName("td");
                 reg = t[0].innerHTML.replace(/\|/g,'');
                 reg = reg.replace(/\s/g,'');
-                console.log(reg)
+                console.log(reg);
                 var r =  (e.regs[reg] >= 0) ? e.regs[reg] : (0x10000000 + e.regs[reg]);
                 console.log(r);
-                for(var j = 32; j > 0; j--){
-                    var w = 1 << (32 - j);
-                    t[j].innerHTML = r & w;
+                for(var j = 8; j > 0; j--){
+                    var w = 0xff << (32 - 4 * j);
+                    var v = (r & w) >> (32 - 4 * j);
+                    t[j].innerHTML = ('0000' + v.toString(2)).slice(-4);
                 }
             }
         }
-
+        
+        function showStack(e){
+            for(var i = 0; i < stack.length; i++){
+                var t = stack[i].getElementsByTagName("td");
+                var s = t[0].innerHTML.replace(/\|/g,'');
+                s = s.replace(/\s/g,'');
+                for(var j = 0; j < 8; j++){
+                    t[j].innerHTML = ('0000' + e.stackSegment[i + j].toString(2)).slice(-4);
+                }
+            }
+        }
+        
         function showRun(e){
             var b = document.getElementById("run");
-            b.innerHTML = "运行第"+ e.pc +"行";
+            b.innerHTML = "运行第"+ (e.pc + 1) +"行";
         }            
 
         function start(){ 
             var table = document.getElementById("regList");
             regList = table.getElementsByTagName("tr");
+            table = document.getElementById("Stack");
+            stack = table.getElementsByTagName("tr"); 
             var code = document.getElementById("Code").value;
             code = code.replace(/^(\s|\xA0)+|(\s|\xA0)+$/g, ''); 
             e = new emulator(code);
-            showRegs(e, regList);
+            showRegs(e);
             showRun(e);
         }
         
         function run(){            
             e.run();            
             if(e.pc == e.codeSegment.length) e.pc = 0;
-            showRegs(e, regList);
+            showRegs(e);
             showRun(e);    
         }
     </script>
+    <script> $("#Code").setTextareaCount({ width: "30px", bgColor: "#ddd", color: "#333", display: "inline-block" }); </script>
     </body>
 </html>
