@@ -14,5 +14,13 @@
         "lastTime": "2021-7-21",
         "active": false,
         "author": "Ser"
+    },
+    {
+        "name": "毛概题库重制版",
+        "path": "毛概题库重制版.json",
+        "num": 608,
+        "lastTime": "2021-8-2",
+        "active": false,
+        "author": "Ser"
     }
 ]
