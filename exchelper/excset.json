@@ -2,25 +2,22 @@
     {
         "name": "毛概题集",
         "path": "毛概题集.json",
-        "num": 1116,
+        "total": 1116,
         "lastTime": "2021-7-20",
-        "active": true,
         "author": "尼德霍格"
     },
     {
         "name": "马原题库全",
         "path": "马原题库全.json",
-        "num": 733,
+        "total": 733,
         "lastTime": "2021-7-21",
-        "active": false,
         "author": "Ser"
     },
     {
         "name": "毛概题库重制版",
         "path": "毛概题库重制版.json",
-        "num": 608,
+        "total": 608,
         "lastTime": "2021-8-2",
-        "active": false,
         "author": "Ser"
     }
 ]
