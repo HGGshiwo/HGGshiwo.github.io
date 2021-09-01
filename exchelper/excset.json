@@ -19,5 +19,12 @@
         "total": 608,
         "update": "2021-8-2",
         "author": "Ser"
+    },
+    {
+        "name": "沟通技巧",
+        "path": "沟通技巧.json",
+        "total": 69,
+        "update": "2021-9-1",
+        "author": "Ser"
     }
 ]
