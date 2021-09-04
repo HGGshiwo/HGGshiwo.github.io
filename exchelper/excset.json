@@ -26,5 +26,12 @@
         "total": 69,
         "update": "2021-9-1",
         "author": "Ser"
+    },
+    {
+        "name": "思修题库",
+        "path": "思修题库.json",
+        "total": 940,
+        "update": "2021-9-4",
+        "author": "defalt"
     }
 ]
