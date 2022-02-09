@@ -1,0 +1,22 @@
+{
+    "1": {"text": "将毛泽东思想确定为我们党一切工作的指导思想，\n是党的（   ）决定的。", 
+    "choices": {
+      "A":{ "text": "．“五大”", "active": false},
+      "B":{"text": "．“六大”", "active": true}, 
+      "C":{"text": "．“七大”", "active": false}, 
+      "D":{ "text": "．“八大”", "active": false}
+    }, 
+    "key": ["C"], 
+    "multi": false
+    }, 
+    "2": {"text": "毛泽东思想形成的标志是（   ）。", 
+    "choices": {
+      "A":{"text": "．实事求是", "active": false}, 
+      "B":{"text": "．遵义会议", "active": false}, 
+      "C":{"text": "．开辟了农村包围城市，武装夺取政权的道路", "active": false}, 
+      "D":{"text": "．新民主主义革命的理论", "active": false}
+      }, 
+      "key": ["D"], 
+      "multi": false
+    }
+}
