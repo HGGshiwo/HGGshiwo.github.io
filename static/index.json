@@ -13,19 +13,19 @@
     },
     "毛概题库重制版": {
         "path": "毛概题库重制版.json",
-        "total": 608,
+        "total": 607,
         "update": "2021-8-2",
         "author": "Ser"
     },
     "沟通技巧":{
         "path": "沟通技巧.json",
-        "total": 69,
+        "total": 67,
         "update": "2021-9-1",
         "author": "Ser"
     },
     "思修题库":{
         "path": "思修题库.json",
-        "total": 1196,
+        "total": 1198,
         "update": "2021-9-4",
         "author": "defalt"
     }
