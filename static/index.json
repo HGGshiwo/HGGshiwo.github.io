@@ -28,5 +28,11 @@
         "total": 1198,
         "update": "2021-9-4",
         "author": "defalt"
+    },
+    "嵌入式题库":{
+        "path": "嵌入式题库.json",
+        "total": 177,
+        "update": "2022-6-18",
+        "author": "defalt"
     }
 }
