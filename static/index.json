@@ -34,5 +34,11 @@
         "total": 176,
         "update": "2022-6-18",
         "author": "defalt"
+    },
+    "软工基客观题库":{
+        "path": "软工基客观题库.json",
+        "total": 561,
+        "update": "2022-6-19",
+        "author": "未知"
     }
 }
